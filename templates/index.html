@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicle Inventory System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🚗 Vehicle Inventory System</h1>
+        
+        <!-- Add Vehicle Form -->
+        <div class="form-section">
+            <h2>Add New Vehicle</h2>
+            <form id="addVehicleForm">
+                <input type="text" id="vehicleId" placeholder="Vehicle ID (e.g., V1004)" required>
+                <input type="text" id="vehicleModel" placeholder="Model (e.g., Explorer)" required>
+                <input type="number" id="vehicleCost" placeholder="Cost (e.g., 40000)" required>
+                <select id="vehicleStatus">
+                    <option value="in_production">In Production</option>
+                    <option value="completed">Completed</option>
+                    <option value="delivered">Delivered</option>
+                </select>
+                <button type="submit">Add Vehicle</button>
+            </form>
+        </div>
+
+        <!-- Inventory Display -->
+        <div class="inventory-section">
+            <h2>Current Inventory</h2>
+            <div id="inventoryList">
+                <p>Loading inventory...</p>
+            </div>
+            <div class="summary">
+                <strong>Total Inventory Value: $<span id="totalValue">0</span></strong>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
